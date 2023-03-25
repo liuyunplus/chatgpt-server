@@ -17,11 +17,13 @@ import java.util.Random;
 public class WeChatController {
 
     @PostMapping(value = "/api/msg")
-    Object get(@RequestBody Map<String, Object> param) throws JsonProcessingException {
-        String jsonString = new ObjectMapper().writeValueAsString(param);
+    String get(@RequestBody Map<String, Object> param) throws JsonProcessingException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        String jsonString = objectMapper.writeValueAsString(param);
         System.out.println(jsonString);
         param.put("Content", "欢迎来到我的博客");
-        return param;
+        param.remove("MsgId");
+        return objectMapper.writeValueAsString(param);
     }
 
 }
