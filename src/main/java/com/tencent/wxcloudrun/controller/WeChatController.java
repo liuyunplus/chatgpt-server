@@ -21,6 +21,7 @@ public class WeChatController {
         ObjectMapper objectMapper = new ObjectMapper();
         String jsonString = objectMapper.writeValueAsString(param);
         System.out.println(jsonString);
+        param.put("CreateTime", System.currentTimeMillis() / 1000);
         param.put("Content", "欢迎来到我的博客");
         param.remove("MsgId");
         return objectMapper.writeValueAsString(param);
