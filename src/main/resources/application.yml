@@ -14,4 +14,4 @@ wx:
     secret: ${WXPA_SECRET}
     token: 123456
 
-apiKey: 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
+apiKey: ${OPENAI_KEY}}
