@@ -1,17 +1,10 @@
 server:
   port: 8080
 
-spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${MYSQL_ADDRESS}/${MYSQL_DATABASE}
-    username: ${MYSQL_USERNAME}
-    password: ${MySQL_PASSWORD}
-
 wx:
   mp:
     app-id: ${WXPA_APP_ID}
     secret: ${WXPA_SECRET}
     token: 123456
 
-apiKey: ${OPENAI_KEY}}
+apiKey: ${OPENAI_KEY}

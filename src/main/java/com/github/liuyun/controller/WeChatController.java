@@ -1,5 +1,6 @@
-package com.tencent.wxcloudrun.controller;
+package com.github.liuyun.controller;
 
+import com.github.liuyun.utils.OpenAiHelper;
 import me.chanjar.weixin.mp.api.WxMpMessageRouter;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;
@@ -12,9 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
 /**
- * counter控制器
+ * WeChatController
  */
 @RestController
 public class WeChatController {
@@ -25,6 +25,13 @@ public class WeChatController {
     private WxMpService wxMpService;
     @Autowired
     private WxMpMessageRouter wxMpMessageRouter;
+    @Autowired
+    private OpenAiHelper openAiHelper;
+
+    @GetMapping("test")
+    public String test(String msg) {
+        return openAiHelper.fetchContent(msg);
+    }
 
     @GetMapping("message")
     public String configAccess(String signature, String timestamp, String nonce, String echostr) {

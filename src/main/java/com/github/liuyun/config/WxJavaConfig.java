@@ -1,6 +1,7 @@
-package com.tencent.wxcloudrun.config;
+package com.github.liuyun.config;
 
-import com.tencent.wxcloudrun.service.TextHandler;
+import com.github.liuyun.handler.TextHandler;
+import com.github.liuyun.handler.TextHandler;
 import me.chanjar.weixin.common.api.WxConsts;
 import me.chanjar.weixin.mp.api.WxMpMessageRouter;
 import me.chanjar.weixin.mp.api.WxMpService;
